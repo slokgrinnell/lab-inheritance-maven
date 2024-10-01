@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 
 import edu.grinnell.csc207.util.BasicCounter;
 import edu.grinnell.csc207.util.Counter;
+import edu.grinnell.csc207.util.DecrementableCounter;
 import edu.grinnell.csc207.util.Tally;
 
 
@@ -28,7 +29,7 @@ public class CounterExperiments {
     //Counter alpha = new BasicCounter(0);
     Counter alpha = new Tally();
     Counter beta = new BasicCounter(123);
-    Counter gamma = new BasicCounter(-5);
+    DecrementableCounter gamma = new DecrementableCounter(-5);
 
     // Print original values
     pen.println("Original alpha = " + alpha);
@@ -42,6 +43,11 @@ public class CounterExperiments {
     pen.println("Updated alpha = " + alpha);
     pen.println("Updated beta = " + beta);
     pen.println("Updated gamma = " + gamma);
+
+    gamma.reset();
+    pen.println("After resetting gamma: " + gamma);
+    gamma.decrement();
+    pen.println("After decrementing gamma: " + gamma);
 
     // And we're done
     pen.close();
