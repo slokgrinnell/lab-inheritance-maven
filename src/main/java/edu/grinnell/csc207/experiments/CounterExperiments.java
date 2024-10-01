@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import edu.grinnell.csc207.util.BasicCounter;
 import edu.grinnell.csc207.util.BoundedCounter;
 import edu.grinnell.csc207.util.Counter;
-import edu.grinnell.csc207.util.DoubleCounter;
+import edu.grinnell.csc207.util.DblCtr;
 import edu.grinnell.csc207.util.NamedCounter;
 
 
@@ -31,7 +31,8 @@ public class CounterExperiments {
     //Counter alpha = new Tally();
     Counter alpha = new NamedCounter("alfa", 0);
     //Counter beta = new BasicCounter(123);
-    Counter beta = new DoubleCounter(123);
+    //Counter beta = new DoubleCounter(123);
+    Counter beta = new DblCtr(new BasicCounter(0));
     // DecrementableCounter gamma = new DecrementableCounter(-5);
     BasicCounter gamma = new BoundedCounter(-5,3);
 
