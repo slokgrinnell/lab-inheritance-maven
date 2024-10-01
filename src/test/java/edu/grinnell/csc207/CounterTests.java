@@ -3,9 +3,9 @@ package edu.grinnell.csc207;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import edu.grinnell.csc207.util.BasicCounter;
 import edu.grinnell.csc207.util.Counter;
 import edu.grinnell.csc207.util.DecrementableCounter;
+import edu.grinnell.csc207.util.DoubleCounter;
 import edu.grinnell.csc207.util.NamedCounter;
 
 /**
@@ -23,8 +23,9 @@ public class CounterTests {
   public void test1() throws Exception {
     //Counter alpha = new BasicCounter(0);
     //Counter alpha = new Tally();
-    Counter alpha = new NamedCounter("alfa", 0);
-    Counter beta = new BasicCounter(123);
+    NamedCounter alpha = new NamedCounter("alfa", 0);
+    //Counter beta = new BasicCounter(123);
+    Counter beta = new DoubleCounter(123);
     // Counter gamma = new BasicCounter(-5);
     DecrementableCounter gamma = new DecrementableCounter(-5);
     assertEquals(0, alpha.get(), "original alpha");
