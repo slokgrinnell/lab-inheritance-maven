@@ -6,8 +6,8 @@ package edu.grinnell.csc207.experiments;
 import java.io.PrintWriter;
 
 import edu.grinnell.csc207.util.BasicCounter;
+import edu.grinnell.csc207.util.BoundedCounter;
 import edu.grinnell.csc207.util.Counter;
-import edu.grinnell.csc207.util.DecrementableCounter;
 import edu.grinnell.csc207.util.DoubleCounter;
 import edu.grinnell.csc207.util.NamedCounter;
 
@@ -32,7 +32,9 @@ public class CounterExperiments {
     Counter alpha = new NamedCounter("alfa", 0);
     //Counter beta = new BasicCounter(123);
     Counter beta = new DoubleCounter(123);
-    DecrementableCounter gamma = new DecrementableCounter(-5);
+    // DecrementableCounter gamma = new DecrementableCounter(-5);
+    BasicCounter gamma = new BoundedCounter(-5,3);
+
 
     // Print original values
     pen.println("Original alpha = " + alpha);
@@ -49,8 +51,8 @@ public class CounterExperiments {
 
     gamma.reset();
     pen.println("After resetting gamma: " + gamma);
-    gamma.decrement();
-    pen.println("After decrementing gamma: " + gamma);
+    // gamma.decrement();
+    // pen.println("After decrementing gamma: " + gamma);
 
     // And we're done
     pen.close();
